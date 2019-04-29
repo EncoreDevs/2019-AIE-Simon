@@ -85,6 +85,12 @@ void simonApp::draw() {
 
 	yellow_button->draw_yellow(m_2dRenderer);
 
+	// conditional renders
+	/*blue_button->selected_blue(m_2dRenderer);
+	red_button->selected_red(m_2dRenderer);
+	green_button->selected_green(m_2dRenderer);
+	yellow_button->selected_yellow(m_2dRenderer);*/
+
 	// output some text, uses the last used colour
 	m_2dRenderer->drawText(m_font, "Press ESC to quit", 0, 0);
 

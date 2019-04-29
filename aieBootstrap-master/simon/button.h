@@ -12,6 +12,13 @@ public:
 	void draw_red(aie::Renderer2D* renderer);
 	void draw_green(aie::Renderer2D* renderer);
 	void draw_yellow(aie::Renderer2D* renderer);
+
+	void selected_blue(aie::Renderer2D* renderer);
+	void selected_red(aie::Renderer2D* renderer);
+	void selected_green(aie::Renderer2D* renderer);
+	void selected_yellow(aie::Renderer2D* renderer);
+
+
 	bool update();
 
 private:
