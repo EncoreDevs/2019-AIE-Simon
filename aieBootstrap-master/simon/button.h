@@ -14,7 +14,7 @@ public:
 	void draw_yellow(aie::Renderer2D* renderer);
 	bool update();
 
-	// test 
+	// testing
 private:
 	//Font and text for the button
 	aie::Font* m_font;
