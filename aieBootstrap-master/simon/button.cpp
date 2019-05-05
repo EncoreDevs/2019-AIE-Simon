@@ -27,14 +27,14 @@ button::~button()
 }
 
 
-
+//This Will Be Drawn Always
 void button::draw_blue(aie::Renderer2D* renderer)
 {
 	//Draw a coloured box for the button background.
 	renderer->setRenderColour(0.0f, 0.0f, 0.7f, 1.0f);
 	renderer->drawBox(m_posX, m_posY, m_width, m_height);
 	renderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);
-	
+
 	//Draw text on the button.
 	renderer->drawText(m_font, m_buttonText, centredPosX, centredPosY);
 
@@ -72,7 +72,51 @@ void button::draw_yellow(aie::Renderer2D* renderer)
 	renderer->drawText(m_font, m_buttonText, centredPosX, centredPosY);
 
 }
+//When The Number is Selected this will be drawn
+void button::selected_blue(aie::Renderer2D* renderer)
+{
+	//Draw a coloured box for the button background.
+	renderer->setRenderColour(0.0f, 201.0f, 255.0f, 1.0f);
+	renderer->drawBox(m_posX, m_posY, m_width, m_height);
+	renderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);
 
+	//Draw text on the button.
+	renderer->drawText(m_font, m_buttonText, centredPosX, centredPosY);
+
+}
+void button::selected_red(aie::Renderer2D* renderer)
+{
+	//Draw a coloured box for the button background.
+	renderer->setRenderColour(255.0f, 0.0f, 0.7f, 1.0f);
+	renderer->drawBox(m_posX, m_posY, m_width, m_height);
+	renderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);
+
+	//Draw text on the button.
+	renderer->drawText(m_font, m_buttonText, centredPosX, centredPosY);
+
+}
+void button::selected_green(aie::Renderer2D* renderer)
+{
+	//Draw a coloured box for the button background.
+	renderer->setRenderColour(0.0f, 255.0f, 0.7f, 1.0f);
+	renderer->drawBox(m_posX, m_posY, m_width, m_height);
+	renderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);
+
+	//Draw text on the button.
+	renderer->drawText(m_font, m_buttonText, centredPosX, centredPosY);
+
+}
+void button::selected_yellow(aie::Renderer2D* renderer)
+{
+	//Draw a coloured box for the button background.
+	renderer->setRenderColour(255.0f, 239.0f, 0.0f, 1.0f);
+	renderer->drawBox(m_posX, m_posY, m_width, m_height);
+	renderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);
+
+	//Draw text on the button.
+	renderer->drawText(m_font, m_buttonText, centredPosX, centredPosY);
+
+}
 
 
 bool button::update()
@@ -92,7 +136,7 @@ bool button::update()
 		mouseY > bottom && mouseY < top)
 	{
 		//Return whether the mouse button is clicked while colliding
-		return input->wasMouseButtonPressed(aie::INPUT_MOUSE_BUTTON_LEFT);
+		return input->wasMouseButtonReleased(aie::INPUT_MOUSE_BUTTON_LEFT);
 	}
 	return false;
 

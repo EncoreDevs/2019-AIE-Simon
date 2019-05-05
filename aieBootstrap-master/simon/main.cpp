@@ -2,7 +2,7 @@
 
 
 int main() {
-	
+
 	// allocation
 	auto app = new simonApp();
 
@@ -14,7 +14,7 @@ int main() {
 	delete app;
 
 
-	
+
 
 	return 0;
 }

@@ -12,6 +12,13 @@ public:
 	void draw_red(aie::Renderer2D* renderer);
 	void draw_green(aie::Renderer2D* renderer);
 	void draw_yellow(aie::Renderer2D* renderer);
+
+	void selected_blue(aie::Renderer2D* renderer);
+	void selected_red(aie::Renderer2D* renderer);
+	void selected_green(aie::Renderer2D* renderer);
+	void selected_yellow(aie::Renderer2D* renderer);
+
+
 	bool update();
 
 private:
@@ -26,7 +33,7 @@ private:
 	float m_height;
 
 	//Calculating the centred text position is a bit fiddly.
-	float textWidth; 
+	float textWidth;
 	float textHeight;
 	float centredPosX;
 	float centredPosY;

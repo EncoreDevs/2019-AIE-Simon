@@ -13,7 +13,7 @@ simonApp::~simonApp() {
 }
 
 bool simonApp::startup() {
-	
+
 	m_2dRenderer = new aie::Renderer2D();
 
 	// TODO: remember to change this when redistributing a build!
@@ -39,32 +39,11 @@ void simonApp::update(float deltaTime) {
 
 	// input example
 	aie::Input* input = aie::Input::getInstance();
-	
-	//Updating Button
-	if (blue_button->update())
-	{
-		//Replace this with whatever the button should do.
-		std::cout << "Blue clicked" << std::endl;
-	}
-	if (red_button->update())
-	{
-		//Replace this with whatever the button should do.
-		std::cout << "Red clicked" << std::endl;
-	}
-	if (green_button->update())
-	{
-		//Replace this with whatever the button should do.
-		std::cout << "Green clicked" << std::endl;
-	}
-	if (yellow_button->update())
-	{
-		//Replace this with whatever the button should do.
-		std::cout << "Yellow clicked" << std::endl;
-	}
+
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
-	
+
 }
 
 void simonApp::draw() {
@@ -74,7 +53,14 @@ void simonApp::draw() {
 
 	// begin drawing sprites
 	m_2dRenderer->begin();
+
+
+	// conditional renders
 	
+	
+
+	
+
 	// draw your stuff here!
 
 	blue_button->draw_blue(m_2dRenderer);
@@ -85,11 +71,39 @@ void simonApp::draw() {
 
 	yellow_button->draw_yellow(m_2dRenderer);
 
+	// changing button if it is clicked
+	if (blue_button->update())
+	{
+		//Replace this with whatever the button should do.
+		blue_button->selected_blue(m_2dRenderer);
+		std::cout << "Blue clicked" << std::endl;
+	}
+	if (red_button->update())
+	{
+		red_button->selected_red(m_2dRenderer);
+		//Replace this with whatever the button should do.
+		std::cout << "Red clicked" << std::endl;
+	}
+	if (green_button->update())
+	{
+		//Replace this with whatever the button should do.
+		std::cout << "Green clicked" << std::endl;
+		green_button->selected_green(m_2dRenderer);
+	}
+	if (yellow_button->update())
+	{
+		//Replace this with whatever the button should do.
+		std::cout << "Yellow clicked" << std::endl;
+		yellow_button->selected_yellow(m_2dRenderer);
+	}
+
+	
+
 	// output some text, uses the last used colour
 	m_2dRenderer->drawText(m_font, "Press ESC to quit", 0, 0);
 
 	// done drawing sprites
 	m_2dRenderer->end();
 
-	
+
 }
