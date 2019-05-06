@@ -3,10 +3,11 @@
 #include "Application.h"
 #include "Renderer2D.h"
 #include "button.h"
+#include "dynamicarray.h"
 
 class simonApp : public aie::Application {
 public:
-
+	dynamicarray<int> SimonGame[10];
 	simonApp();
 	virtual ~simonApp();
 

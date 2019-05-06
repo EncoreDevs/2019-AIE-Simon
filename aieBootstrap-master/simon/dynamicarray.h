@@ -187,7 +187,7 @@ private:
 	//Data Type?
 
 	//Store Current Length
-	size_t m_size = 0; //Size Count Length 
+	size_t m_count = 0; //Size Count Length 
 
 	//Store Current Capacity
 	size_t m_capacity = 0;

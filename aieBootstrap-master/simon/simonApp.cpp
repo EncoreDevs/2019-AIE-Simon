@@ -16,7 +16,7 @@ simonApp::~simonApp() {
 }
 
 bool simonApp::startup() {
-
+	srand(time(NULL));
 	m_2dRenderer = new aie::Renderer2D();
 
 	// TODO: remember to change this when redistributing a build!
@@ -51,10 +51,9 @@ void simonApp::update(float deltaTime) {
 		quit();
 
 	//Unsure if this should be in the update or in the draw section of the program.
-	dynamicarray<int> SimonGame[10]{};
-	srand(time(NULL));
-
-	int gamesturns, simon = 0;
+	
+	int gamesturns = 0;
+	int simon = 0;
 
 	for (int i = gamesturns; i < gamesturns; ++i)
 	{
