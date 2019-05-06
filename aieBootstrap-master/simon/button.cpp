@@ -79,48 +79,14 @@ void button::selected_blue(aie::Renderer2D* renderer)
 	renderer->setRenderColour(0.0f, 201.0f, 255.0f, 1.0f);
 	renderer->drawBox(m_posX, m_posY, m_width, m_height);
 	renderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);
-<<<<<<< HEAD
-=======
+
 
 	//Draw text on the button.
 	renderer->drawText(m_font, m_buttonText, centredPosX, centredPosY);
 
 }
-void button::selected_red(aie::Renderer2D* renderer)
-{
-	//Draw a coloured box for the button background.
-	renderer->setRenderColour(255.0f, 0.0f, 0.7f, 1.0f);
-	renderer->drawBox(m_posX, m_posY, m_width, m_height);
-	renderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);
 
-	//Draw text on the button.
-	renderer->drawText(m_font, m_buttonText, centredPosX, centredPosY);
 
-}
-void button::selected_green(aie::Renderer2D* renderer)
-{
-	//Draw a coloured box for the button background.
-	renderer->setRenderColour(0.0f, 255.0f, 0.7f, 1.0f);
-	renderer->drawBox(m_posX, m_posY, m_width, m_height);
-	renderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);
-
-	//Draw text on the button.
-	renderer->drawText(m_font, m_buttonText, centredPosX, centredPosY);
-
-}
-void button::selected_yellow(aie::Renderer2D* renderer)
-{
-	//Draw a coloured box for the button background.
-	renderer->setRenderColour(255.0f, 239.0f, 0.0f, 1.0f);
-	renderer->drawBox(m_posX, m_posY, m_width, m_height);
-	renderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);
->>>>>>> dac1d4fb80d9cac7ff846f1acf87e2c973021c7e
-
-	//Draw text on the button.
-	renderer->drawText(m_font, m_buttonText, centredPosX, centredPosY);
-
-}
-<<<<<<< HEAD
 void button::selected_red(aie::Renderer2D* renderer)
 {
 	//Draw a coloured box for the button background.
@@ -154,8 +120,7 @@ void button::selected_yellow(aie::Renderer2D* renderer)
 	renderer->drawText(m_font, m_buttonText, centredPosX, centredPosY);
 
 }
-=======
->>>>>>> dac1d4fb80d9cac7ff846f1acf87e2c973021c7e
+
 
 
 bool button::update()

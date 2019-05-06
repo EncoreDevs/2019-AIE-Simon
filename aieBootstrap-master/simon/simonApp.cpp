@@ -2,7 +2,10 @@
 #include "Texture.h"
 #include "Font.h"
 #include "Input.h"
+#include "dynamicarray.h"
 #include <iostream>
+#include <random>
+#include <time.h>
 
 simonApp::simonApp() {
 
@@ -32,6 +35,9 @@ void simonApp::shutdown() {
 	delete m_font;
 	delete m_2dRenderer;
 	delete blue_button;
+	delete red_button;
+	delete green_button;
+	delete yellow_button;
 
 }
 
@@ -43,6 +49,28 @@ void simonApp::update(float deltaTime) {
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
+
+	//Unsure if this should be in the update or in the draw section of the program.
+	dynamicarray<int> SimonGame[10]{};
+	srand(time(NULL));
+
+	int gamesturns, simon = 0;
+
+	for (int i = gamesturns; i < gamesturns; ++i)
+	{
+		if (i == gamesturns)
+		{
+			gamesturns++;
+		}
+		simon = rand() % 4 + 1;
+		
+		SimonGame->push(simon, i);
+		/* if the player gets correct reset loop and add 1 to gameturns variable and then overwrite the arrays intital value and continue
+		if the player fails the sequence break the loop and display a you lose screen with a replay and exit button.
+		the loop should create values until the loop criteria is met.
+		the loop criteria should be changed if the player is successful in recreating the pattern.
+		*/
+	}
 
 }
 
@@ -99,11 +127,7 @@ void simonApp::draw() {
 
 	
 
-	// conditional renders
-	/*blue_button->selected_blue(m_2dRenderer);
-	red_button->selected_red(m_2dRenderer);
-	green_button->selected_green(m_2dRenderer);
-	yellow_button->selected_yellow(m_2dRenderer);*/
+	
 
 	// output some text, uses the last used colour
 	m_2dRenderer->drawText(m_font, "Press ESC to quit", 0, 0);
